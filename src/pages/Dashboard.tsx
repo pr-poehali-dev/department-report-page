@@ -1,7 +1,6 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FileText, Printer, Download, Users } from "lucide-react";
 
 const Dashboard = () => {
@@ -33,74 +32,55 @@ const Dashboard = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Tabs defaultValue="report" className="w-full">
-                <TabsList className="grid w-full grid-cols-2">
-                  <TabsTrigger value="report">Отчеты</TabsTrigger>
-                  <TabsTrigger value="analytics">Аналитика</TabsTrigger>
-                </TabsList>
-                
-                <TabsContent value="report" className="space-y-4 py-4">
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <Card>
-                      <CardHeader className="pb-2">
-                        <div className="flex items-center gap-2">
-                          <Printer className="h-5 w-5 text-primary" />
-                          <CardTitle>Печатный отчет</CardTitle>
-                        </div>
-                        <CardDescription>
-                          Формирование отчета для печати
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-gray-600">
-                          Подготовьте печатную версию отчета о сотрудниках кафедры для предоставления 
-                          в бумажном виде.
-                        </p>
-                      </CardContent>
-                      <CardFooter>
-                        <Button onClick={handlePrintReport} className="w-full">
-                          <Printer className="mr-2 h-4 w-4" />
-                          Печать отчета
-                        </Button>
-                      </CardFooter>
-                    </Card>
-                    
-                    <Card>
-                      <CardHeader className="pb-2">
-                        <div className="flex items-center gap-2">
-                          <Download className="h-5 w-5 text-primary" />
-                          <CardTitle>Электронный отчет</CardTitle>
-                        </div>
-                        <CardDescription>
-                          Выгрузка в электронном формате
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-gray-600">
-                          Скачайте отчет о сотрудниках в электронном формате (Excel, PDF или CSV) 
-                          для дальнейшей обработки.
-                        </p>
-                      </CardContent>
-                      <CardFooter>
-                        <Button onClick={handleDownloadReport} className="w-full">
-                          <Download className="mr-2 h-4 w-4" />
-                          Скачать отчет
-                        </Button>
-                      </CardFooter>
-                    </Card>
-                  </div>
-                </TabsContent>
-                
-                <TabsContent value="analytics">
-                  <div className="py-6 text-center">
-                    <Users className="h-12 w-12 mx-auto text-muted-foreground mb-3" />
-                    <h3 className="text-lg font-medium">Аналитика персонала</h3>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      Аналитические данные по сотрудникам будут доступны в ближайшее время
+              <div className="grid gap-4 md:grid-cols-2">
+                <Card>
+                  <CardHeader className="pb-2">
+                    <div className="flex items-center gap-2">
+                      <Printer className="h-5 w-5 text-primary" />
+                      <CardTitle>Печатный отчет</CardTitle>
+                    </div>
+                    <CardDescription>
+                      Формирование отчета для печати
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-gray-600">
+                      Подготовьте печатную версию отчета о сотрудниках кафедры для предоставления 
+                      в бумажном виде.
                     </p>
-                  </div>
-                </TabsContent>
-              </Tabs>
+                  </CardContent>
+                  <CardFooter>
+                    <Button onClick={handlePrintReport} className="w-full">
+                      <Printer className="mr-2 h-4 w-4" />
+                      Печать отчета
+                    </Button>
+                  </CardFooter>
+                </Card>
+                
+                <Card>
+                  <CardHeader className="pb-2">
+                    <div className="flex items-center gap-2">
+                      <Download className="h-5 w-5 text-primary" />
+                      <CardTitle>Электронный отчет</CardTitle>
+                    </div>
+                    <CardDescription>
+                      Выгрузка в электронном формате
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-gray-600">
+                      Скачайте отчет о сотрудниках в электронном формате (Excel, PDF или CSV) 
+                      для дальнейшей обработки.
+                    </p>
+                  </CardContent>
+                  <CardFooter>
+                    <Button onClick={handleDownloadReport} className="w-full">
+                      <Download className="mr-2 h-4 w-4" />
+                      Скачать отчет
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
             </CardContent>
           </Card>
           
